@@ -9,6 +9,9 @@ kotlin {
     android {
         jvmToolchain(11)
     }
+    jvm("desktop") {
+        jvmToolchain(11)
+    }
     sourceSets {
         val commonMain by getting {
             dependencies {

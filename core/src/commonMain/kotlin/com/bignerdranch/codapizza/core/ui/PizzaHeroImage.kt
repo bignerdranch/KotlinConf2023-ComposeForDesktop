@@ -9,9 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import com.bignerdranch.codapizza.core.R
+import com.bignerdranch.codapizza.core.ImageResource
+import com.bignerdranch.codapizza.core.StringResource
+import com.bignerdranch.codapizza.core.getImageResource
+import com.bignerdranch.codapizza.core.getStringResource
 import com.bignerdranch.codapizza.core.model.Pizza
 import com.bignerdranch.codapizza.core.model.ToppingPlacement.All
 import com.bignerdranch.codapizza.core.model.ToppingPlacement.Left
@@ -27,14 +28,14 @@ fun PizzaHeroImage(
             .aspectRatio(1f)
     ) {
         Image(
-            painter = painterResource(R.drawable.pizza_crust),
-            contentDescription = stringResource(R.string.pizza_preview),
+            painter = getImageResource(ImageResource.PizzaCrust),
+            contentDescription = getStringResource(StringResource.PizzaPreview),
             modifier = Modifier.fillMaxSize()
         )
 
         pizza.toppings.forEach { (topping, placement) ->
             Image(
-                painter = painterResource(topping.pizzaOverlayImage),
+                painter = getImageResource(topping.pizzaOverlayImage),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 alignment = when (placement) {

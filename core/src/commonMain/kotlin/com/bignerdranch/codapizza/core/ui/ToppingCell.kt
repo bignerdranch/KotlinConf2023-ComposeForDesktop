@@ -10,8 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.bignerdranch.codapizza.core.getStringResource
 import com.bignerdranch.codapizza.core.model.Topping
 import com.bignerdranch.codapizza.core.model.ToppingPlacement
 
@@ -38,13 +38,13 @@ fun ToppingCell(
                 .padding(start = 4.dp)
         ) {
             Text(
-                text = stringResource(topping.toppingName),
+                text = getStringResource(topping.toppingName),
                 style = MaterialTheme.typography.body1
             )
 
             if (placement != null) {
                 Text(
-                    text = stringResource(placement.label),
+                    text = getStringResource(placement.label),
                     style = MaterialTheme.typography.body2
                 )
             }

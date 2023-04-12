@@ -1,8 +1,8 @@
 package com.bignerdranch.codapizza.core.model
 
-import android.os.Parcelable
+import com.bignerdranch.codapizza.core.Parcelable
+import com.bignerdranch.codapizza.core.Parcelize
 import com.bignerdranch.codapizza.core.model.ToppingPlacement.*
-import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Pizza(

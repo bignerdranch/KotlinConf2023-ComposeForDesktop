@@ -1,12 +1,11 @@
 package com.bignerdranch.codapizza.core.model
 
-import androidx.annotation.StringRes
-import com.bignerdranch.codapizza.core.R
+import com.bignerdranch.codapizza.core.StringResource
 
 enum class ToppingPlacement(
-    @StringRes val label: Int
+    val label: StringResource
 ) {
-    Left(R.string.placement_left),
-    Right(R.string.placement_right),
-    All(R.string.placement_all)
+    Left(StringResource.PlacementLeft),
+    Right(StringResource.PlacementRight),
+    All(StringResource.PlacementAll)
 }

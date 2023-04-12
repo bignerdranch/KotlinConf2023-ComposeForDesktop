@@ -1,40 +1,39 @@
 package com.bignerdranch.codapizza.core.model
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import com.bignerdranch.codapizza.core.R
+import com.bignerdranch.codapizza.core.ImageResource
+import com.bignerdranch.codapizza.core.StringResource
 
 enum class Topping(
-    @StringRes val toppingName: Int,
-    @DrawableRes val pizzaOverlayImage: Int
+    val toppingName: StringResource,
+    val pizzaOverlayImage: ImageResource
 ) {
     Basil(
-        toppingName = R.string.topping_basil,
-        pizzaOverlayImage = R.drawable.topping_basil
+        toppingName = StringResource.ToppingBasil,
+        pizzaOverlayImage = ImageResource.ToppingBasil
     ),
 
     Mushroom(
-        toppingName = R.string.topping_mushroom,
-        pizzaOverlayImage = R.drawable.topping_mushroom
+        toppingName = StringResource.ToppingMushroom,
+        pizzaOverlayImage = ImageResource.ToppingMushroom
     ),
 
     Olive(
-        toppingName = R.string.topping_olive,
-        pizzaOverlayImage = R.drawable.topping_olive
+        toppingName = StringResource.ToppingOlive,
+        pizzaOverlayImage = ImageResource.ToppingOlive
     ),
 
     Peppers(
-        toppingName = R.string.topping_peppers,
-        pizzaOverlayImage = R.drawable.topping_peppers
+        toppingName = StringResource.ToppingPeppers,
+        pizzaOverlayImage = ImageResource.ToppingPeppers
     ),
 
     Pepperoni(
-        toppingName = R.string.topping_pepperoni,
-        pizzaOverlayImage = R.drawable.topping_pepperoni
+        toppingName = StringResource.ToppingPepperoni,
+        pizzaOverlayImage = ImageResource.ToppingPepperoni
     ),
 
     Pineapple(
-        toppingName = R.string.topping_pineapple,
-        pizzaOverlayImage = R.drawable.topping_pineapple
+        toppingName = StringResource.ToppingPineapple,
+        pizzaOverlayImage = ImageResource.ToppingPineapple
     )
 }

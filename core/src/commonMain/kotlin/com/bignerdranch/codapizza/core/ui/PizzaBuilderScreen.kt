@@ -18,11 +18,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
-import com.bignerdranch.codapizza.core.R
+import com.bignerdranch.codapizza.core.StringResource
+import com.bignerdranch.codapizza.core.getStringResource
 import com.bignerdranch.codapizza.core.model.Pizza
 import com.bignerdranch.codapizza.core.model.Topping
 import kotlinx.coroutines.launch
@@ -36,14 +36,14 @@ fun PizzaBuilderScreen(
 
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-    val snackbarMessage = stringResource(R.string.order_placed_toast)
+    val snackbarMessage = getStringResource(StringResource.OrderPlacedToast)
 
     Scaffold(
         modifier = modifier,
         scaffoldState = scaffoldState,
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.app_name)) }
+                title = { Text(getStringResource(StringResource.AppName)) }
             )
         },
         content = { padding ->
@@ -129,7 +129,7 @@ private fun OrderButton(
         val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
         val price = currencyFormatter.format(pizza.price)
         Text(
-            text = stringResource(R.string.place_order_button, price)
+            text = getStringResource(StringResource.PlaceOrderButton, price)
                 .toUpperCase(Locale.current)
         )
     }

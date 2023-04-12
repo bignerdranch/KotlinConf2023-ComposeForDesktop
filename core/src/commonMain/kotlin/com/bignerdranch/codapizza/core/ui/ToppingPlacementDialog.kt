@@ -1,39 +1,26 @@
 package com.bignerdranch.codapizza.core.ui
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
-import com.bignerdranch.codapizza.core.R
+import com.bignerdranch.codapizza.core.StringResource
+import com.bignerdranch.codapizza.core.getStringResource
 import com.bignerdranch.codapizza.core.model.Topping
 import com.bignerdranch.codapizza.core.model.ToppingPlacement
 
 @Composable
-fun ToppingPlacementDialog(
+expect fun ToppingPlacementDialog(
     topping: Topping,
     onSetToppingPlacement: (placement: ToppingPlacement?) -> Unit,
     onDismissRequest: () -> Unit
-) {
-    Dialog(onDismissRequest = onDismissRequest) {
-        Card {
-            ToppingPlacementDialogContent(
-                topping = topping,
-                onSetToppingPlacement = onSetToppingPlacement,
-                onDismissRequest = onDismissRequest
-            )
-        }
-    }
-}
+)
 
 @Composable
 fun ToppingPlacementDialogContent(
@@ -42,9 +29,9 @@ fun ToppingPlacementDialogContent(
     onDismissRequest: () -> Unit
 ) {
     Column {
-        val toppingName = stringResource(topping.toppingName)
+        val toppingName = getStringResource(topping.toppingName)
         Text(
-            text = stringResource(R.string.placement_prompt, toppingName),
+            text = getStringResource(StringResource.PlacementPrompt, toppingName),
             style = MaterialTheme.typography.subtitle1,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(24.dp)
@@ -61,7 +48,7 @@ fun ToppingPlacementDialogContent(
         }
 
         ToppingPlacementOption(
-            placementName = R.string.placement_none,
+            placementName = StringResource.PlacementNone,
             onClick = {
                 onSetToppingPlacement(null)
                 onDismissRequest()
@@ -72,7 +59,7 @@ fun ToppingPlacementDialogContent(
 
 @Composable
 private fun ToppingPlacementOption(
-    @StringRes placementName: Int,
+    placementName: StringResource,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -81,7 +68,7 @@ private fun ToppingPlacementOption(
         modifier = modifier.fillMaxWidth()
     ) {
         Text(
-            text = stringResource(placementName),
+            text = getStringResource(placementName),
             modifier = Modifier.padding(8.dp)
         )
     }
