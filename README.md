@@ -25,3 +25,16 @@ Both the starting point and the final solution are present in this repository, t
 
 - Understand how to reuse existing Jetpack Compose code to make desktop applications
 - Dip your toes into writing Kotlin Multiplatform code
+
+---
+
+## Running the app
+
+- On Android, you can easily compile the app in Android Studio. If you want to compile the app from the command line, use:
+```
+./gradlew :app:assembleDebug
+```
+- On desktop, on the `solution` git branch, you can run the app using the following Gradle command:
+```
+./gradlew :desktop:run
+```
